@@ -1,0 +1,74 @@
+{
+    "name": "vue-baiduhelper",
+    "version": "0.0.1",
+    "description": "A Tool Class of Baidu API",
+    "main": "index.js",
+    "scripts": {
+        "lint": "xo",
+        "build": "bili",
+        "example": "poi example/index.js -so"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/yelingfeng/vue-baiduHelper.git"
+    },
+    "keywords": [
+        "baidu",
+        "vue"
+    ],
+    "author": "yelingfeng",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/yelingfeng/vue-baiduHelper/issues"
+    },
+    "homepage": "https://github.com/yelingfeng/vue-baiduHelper#readme",
+    "devDependencies": {
+        "bili": "^4.8.0",
+        "commitizen": "^3.1.1",
+        "cz-conventional-changelog": "^2.1.0",
+        "eslint": "^5.16.0",
+        "eslint-config-prettier": "^4.3.0",
+        "eslint-config-xo": "^0.26.0",
+        "eslint-config-yelingfeng": "^1.1.0",
+        "eslint-plugin-prettier": "^3.1.0",
+        "husky": "^2.4.1",
+        "lint-staged": "^8.2.0",
+        "poi": "^12.6.10",
+        "prettier": "^1.18.2",
+        "vue": "^2.6.10",
+        "vue-template-compiler": "^2.6.10",
+        "xo": "^0.24.0"
+    },
+    "xo": {
+        "extends": [
+            "yelingfeng",
+            "plugin:prettier/recommended"
+        ],
+        "ignores": [
+            "example/**"
+        ],
+        "rule": {
+            "unicorn/filename-case": 0
+        }
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.{js,ts,json,md}": [
+            "prettier --write",
+            "git add"
+        ],
+        "src/*.js": [
+            "xo --fix",
+            "git add"
+        ]
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
+    }
+}
