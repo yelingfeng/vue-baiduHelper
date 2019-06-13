@@ -1,12 +1,15 @@
 {
     "name": "vue-baiduhelper",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "A Tool Class of Baidu API",
-    "main": "index.js",
+    "main": "dist/vue-baiduHelper.js",
+    "files": [
+        "dist"
+    ],
     "scripts": {
         "lint": "xo",
         "build": "bili",
-        "example": "poi example/index.js -so"
+        "example": "poi example/index.js --html.template ./example/public/index.html  -so"
     },
     "repository": {
         "type": "git",
@@ -25,12 +28,15 @@
     "devDependencies": {
         "bili": "^4.8.0",
         "commitizen": "^3.1.1",
+        "conventional-changelog": "^3.1.8",
         "cz-conventional-changelog": "^2.1.0",
+        "cz-customizable": "^6.2.0",
         "eslint": "^5.16.0",
         "eslint-config-prettier": "^4.3.0",
         "eslint-config-xo": "^0.26.0",
         "eslint-config-yelingfeng": "^1.1.0",
         "eslint-plugin-prettier": "^3.1.0",
+        "gh-pages": "^2.0.1",
         "husky": "^2.4.1",
         "lint-staged": "^8.2.0",
         "poi": "^12.6.10",
@@ -68,7 +74,7 @@
     },
     "config": {
         "commitizen": {
-            "path": "./node_modules/cz-conventional-changelog"
+            "path": "node_modules/cz-customizable"
         }
     }
 }
