@@ -1,7 +1,9 @@
+import { creatMap, createPoint } from './mapCommoner'
+// 默认center
+const defaultCenter = ['99.825', '36.384']
+
 class MapHelper {
-    constructor(options) {
-        let { el, center, zoom, maxZoom, isDraw } = options
-        this.options = options
+    constructor({ el, center = defaultCenter, zoom, maxZoom, isDraw }) {
         this.el = el
         this.mapCenter = center
         this.mapZoom = zoom
@@ -12,6 +14,15 @@ class MapHelper {
         // 箭头相关
         this.arrowLays = []
         this.ploylineDatas = []
+        this.create()
+    }
+
+    create() {
+        this.map = creatMap(this.el, { minZoom: 3, maxZoom: this.maxZoom })
+        this.map.clearOverlays()
+        const poi = createPoint(this.mapCenter[0], this.mapCenter[1])
+        this.map.centerAndZoom(poi, this.mapZoom)
+        this.map.enableScrollWheelZoom()
     }
 }
 
