@@ -1,7 +1,8 @@
 <template>
   <div id="container">
     <h2>test demo</h2>
-    <BMapHelper title="ga-map" width="1000" height="500"></BMapHelper>
+    zoom:<input type="range" v-model="zoom" min="3" max="19">
+    <BMap width="1000" height="500" @click="mapClick" :zoom="zoom"></BMap>
   </div>
 </template>
 
@@ -9,6 +10,12 @@
 export default {
     data() {
         return {
+            zoom:10
+        }
+    },
+    methods:{
+        mapClick(e){
+            console.log(e)
         }
     }
 }

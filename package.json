@@ -10,7 +10,7 @@
         "lint": "xo",
         "build": "bili",
         "release": "yarn lint & standard-version",
-        "example": "poi example/index.js --html.template ./example/public/index.html  -so"
+        "example": "poi --serve"
     },
     "repository": {
         "type": "git",
@@ -55,7 +55,8 @@
             "example/**"
         ],
         "rule": {
-            "unicorn/filename-case": 0
+            "unicorn/filename-case": 0,
+            "no-unused-expressions": 0
         }
     },
     "husky": {
